@@ -64,7 +64,7 @@ async def save_new_link(request: Request):
 # --- Helpers
 def db_connect():
     return psycopg.connect(
-        host= "localhost",
+        host= "db",
         port = 5432,
         dbname = POSTGRES_DB,
         user = POSTGRES_USER,
