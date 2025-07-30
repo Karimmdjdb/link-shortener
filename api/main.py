@@ -55,7 +55,7 @@ async def save_new_link(request: Request):
     short_link = ''.join(random.choices(alphabet, k=15))
     conn = db_connect()
     with conn.cursor() as cur:
-        cur.execute("INSERT INTO links (full_url, short_url) values (%s, %s)", (data["link"], short_link))
+        cur.execute("INSERT INTO links (full_url, short_url) values (%s, %s)", (data["url"], short_link))
         conn.commit()
         cur.close()
     conn.close()
